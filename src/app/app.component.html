@@ -25,7 +25,31 @@
         (selectedId)="handleUserSelected($event)"
       />
     </li>
+    <li>
+      <app-user
+        [avatar]="users[3].avatar"
+        [name]="users[3].name"
+        [id]="users[3].id"
+        (selectedId)="handleUserSelected($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="users[4].avatar"
+        [name]="users[4].name"
+        [id]="users[4].id"
+        (selectedId)="handleUserSelected($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="users[5].avatar"
+        [name]="users[5].name"
+        [id]="users[5].id"
+        (selectedId)="handleUserSelected($event)"
+      />
+    </li>
   </ul>
 
-
+  <app-tasks [name]="selectedUser?.name"/>
 </main>
