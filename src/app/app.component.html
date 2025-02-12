@@ -1,26 +1,22 @@
 <app-header />
 <main>
   <ul id="users">
-    <li>
-      <app-user
-        [user]="users[0]"
-        (selectedId)="handleUserSelected($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [user]="users[1]"
-        (selectedId)="handleUserSelected($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [user]="users[2]"
-        (selectedId)="handleUserSelected($event)"
-      />
-    </li>
 
+    @for (user of users; track user.id) {
+
+      <li>
+        <app-user
+          [user]="user"
+          (selectedId)="handleUserSelected($event)"
+        />
+      </li>
+    }
   </ul>
 
-  <app-tasks [name]="selectedUser?.name"/>
+  @if (selectedUserId !== 'u1' && selectedUserId ) { 
+    <app-tasks [name]="selectedUser.name"/>
+
+  } @else {
+    <h1>select a user</h1>
+  }
 </main>
