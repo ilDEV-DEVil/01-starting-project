@@ -13,10 +13,9 @@
     }
   </ul>
 
-  @if (selectedUserId !== 'u1' && selectedUserId ) { 
-    <app-tasks [name]="selectedUser.name"/>
-
+  @if (selectedUserId) { 
+    <app-tasks [userName]="selectedUser.name" [userId]="selectedUser.id"/>
   } @else {
-    <h1>select a user</h1>
+    <div>select a user</div>
   }
 </main>

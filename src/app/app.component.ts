@@ -3,7 +3,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { TasksComponent } from './components/tasks/tasks.component';
 import { UserComponent } from "./components/user/user.component";
 import { DUMMY_USERS } from './dummy-users';
-import User from './interfaces/user.interface';
+import User from './interfaces/user.model';
 
 @Component({
   selector: 'app-root',
