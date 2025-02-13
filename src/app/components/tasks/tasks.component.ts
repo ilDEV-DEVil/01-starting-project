@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NewTaskComponent } from "../new-task/new-task.component";
 import { SingleTaskComponent } from '../single-task/single-task.component';
+import { NewTask } from '../../interfaces/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -40,7 +41,7 @@ export class TasksComponent {
     },
   ];
 
-  isAddingNewTask: boolean = false;
+  showDialog: boolean = false;
 
 
   get selectedUserTask() {
@@ -52,10 +53,21 @@ export class TasksComponent {
   }
 
   onAddNewTask() {
-    this.isAddingNewTask = true;
+    this.showDialog = true;
   }
 
   onClosingDialog(isClosing: boolean) {
-    this.isAddingNewTask = !isClosing;
+    this.showDialog = !isClosing;
+  }
+
+  onAddingNewTask(newTask: NewTask) {
+    this.tasks.unshift({
+        id: new Date().getTime().toString(),
+        userId: this.userId,
+        ...newTask
+      }
+    )
+
+    this.showDialog = false;
   }
 }
