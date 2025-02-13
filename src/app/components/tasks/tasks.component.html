@@ -1,6 +1,9 @@
 @if(showDialog) {
 
-    <app-new-task (closeDialog)="onClosingDialog($event)" (newTask)="onAddingNewTask($event)"/>
+    <app-new-task
+     [userId]="userId"
+     (closeDialog)="onClosingDialog($event)"
+    />
 }
 
 <section id="tasks">
@@ -16,8 +19,8 @@
             
             <li>
                 <app-single-task
-                [task]="task"
-                (completed)="handleOnCompleted($event)" />
+                 [task]="task"
+                />
             </li>
         }
     </ul>
