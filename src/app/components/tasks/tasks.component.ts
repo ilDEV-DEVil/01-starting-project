@@ -54,4 +54,8 @@ export class TasksComponent {
   onAddNewTask() {
     this.isAddingNewTask = true;
   }
+
+  onClosingDialog(isClosing: boolean) {
+    this.isAddingNewTask = !isClosing;
+  }
 }
