@@ -1,10 +1,11 @@
-import { Component, Input, input, WritableSignal } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NewTaskComponent } from "../new-task/new-task.component";
 import { SingleTaskComponent } from '../single-task/single-task.component';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [SingleTaskComponent],
+  imports: [SingleTaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
@@ -39,11 +40,18 @@ export class TasksComponent {
     },
   ];
 
+  isAddingNewTask: boolean = false;
+
+
   get selectedUserTask() {
     return this.tasks.filter(task => task.userId === this.userId)
   }
 
   handleOnCompleted(id: string) {
     this.tasks = this.tasks.filter( task => task.id !== id)
+  }
+
+  onAddNewTask() {
+    this.isAddingNewTask = true;
   }
 }
