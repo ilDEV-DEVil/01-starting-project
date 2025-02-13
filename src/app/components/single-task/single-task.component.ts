@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import Task from '../../interfaces/task.model';
 
 @Component({
@@ -9,11 +9,11 @@ import Task from '../../interfaces/task.model';
   styleUrl: './single-task.component.css'
 })
 export class SingleTaskComponent {
-  @Input() task: Task = {
-    id: "",
-    userId: "",
-    title: "",
-    summary: "",
-    dueDate: ""
+  @Input({required: true}) task!: Task;
+
+  @Output() completed = new EventEmitter();
+
+  onCompleted() {
+    this.completed.emit(this.task.id);
   }
 }

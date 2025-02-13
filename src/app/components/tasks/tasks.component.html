@@ -10,7 +10,9 @@
         @for ( task of selectedUserTask; track task.id) {
             
             <li>
-                <app-single-task [task]="task" />
+                <app-single-task
+                [task]="task"
+                (completed)="handleOnCompleted($event)" />
             </li>
         }
     </ul>
