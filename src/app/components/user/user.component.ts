@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, input, Input, output, Output } from '@angular/core';
+import { Component, computed, Input, input, output } from '@angular/core';
 import User from '../../interfaces/user.model';
 
 @Component({
@@ -14,6 +14,8 @@ export class UserComponent {
   // @Input({ required: true }) id!: string;
   // @Output() selectedId = new EventEmitter<string>();
 
+  @Input({ required: false}) selected? : boolean;
+  
   user = input.required<User>();
 
   selectedId = output<string>();

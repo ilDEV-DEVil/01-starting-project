@@ -8,6 +8,7 @@
         <app-user
           [user]="user"
           (selectedId)="handleUserSelected($event)"
+          [selected]="selectedUserId === user.id"
         />
       </li>
     }
