@@ -1,6 +1,5 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NewTask } from '../../interfaces/task.model';
 import { TasksService } from '../../services/tasks.service';
 
 @Component({
