@@ -31,10 +31,4 @@ export class TasksComponent {
   onClosingDialog(isClosing: boolean) {
     this.showDialog = !isClosing;
   }
-
-  onAddingNewTask(newTask: NewTask) {
-    
-
-    this.showDialog = false;
-  }
 }
