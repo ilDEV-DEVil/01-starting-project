@@ -1,11 +1,8 @@
 import { Component, computed, Input, input, output } from '@angular/core';
 import User from '../../interfaces/user.model';
-import { UiCardComponent } from "../ui-card/ui-card.component";
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [UiCardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
