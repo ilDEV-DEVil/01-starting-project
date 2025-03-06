@@ -29,6 +29,9 @@ export class NewTaskComponent {
         dueDate: this.enteredDate
       },
       this.userId
-    )
+    );
+    
+    this.onCloseDialog();
   }
+
 }
