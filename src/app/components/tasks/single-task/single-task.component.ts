@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
-import { Task } from '../../interfaces/task.model';
-import { TasksService } from '../../services/tasks.service';
+import { Task } from '../../../interfaces/task.model';
+import { TasksService } from '../../../services/tasks.service';
 
 @Component({
   selector: 'app-single-task',
